@@ -1,0 +1,39 @@
+.side-bar{
+  padding: 6px;
+  position: relative;
+  background-color: #292929;
+  &>.side-expander{
+    position: absolute;
+    top: 8px;
+    right: -20px;
+    background-color: gray;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &>.notes{
+    /* background-color: #272626; */
+    height: 70px;
+    border-bottom: 1px solid #c5c5c511;
+  }
+  & li>*{
+    display: flex;
+    width: 100%;
+    color: #9ca3af;
+    text-decoration: none;
+    line-height: 1.5;
+    padding: 8px 20px;
+  }
+  & li{
+    list-style: none;
+    
+    
+  }
+  & li:hover{
+    background-color: #414040ab;
+  }
+}
+
