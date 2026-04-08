@@ -18,7 +18,7 @@ function Pager() {
                 <Route path='/dashboard' element={ <Dashboard/> } />
                 <Route path='/home' element={ <Home/> } />
                 <Route path='/animals' element={ <Animals/> }>
-                    <Route path='report' element={<AnimalReport/>} />
+                    <Route path='report/:id' element={<AnimalReport/>} />
                     <Route path='movements' element={<AnimalMovement/>} />
                 </Route>
                 <Route path='/movements/stock' element={ <StockMovement/> } />

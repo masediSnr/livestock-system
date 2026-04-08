@@ -1,13 +1,21 @@
 import React from 'react'
 import Table from '../components/Table'
 import SearchBar from '../components/SearchBar'
+import NotificationPanel from '../components/NotificationPanel'
 
-function Home() {
+function Home({user}) {
+
+    let welcomeUser = {
+        name: "Terrence Masedi",
+        role: "Admin"
+    }
+
+
     return (
         <>
-            <SearchBar/>
             <div className="home-container">
-                <h2>Ntinga</h2>
+                <h2>Welcome {welcomeUser.name} !</h2>
+                <NotificationPanel/>
                 <div className="splitter">
                     <Table/>
                 </div>

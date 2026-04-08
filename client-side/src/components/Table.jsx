@@ -53,7 +53,9 @@ function Table() {
 
     return (
         <div className='data-table'>
+            <button className='addToForm'><span>Add New Record</span>  +</button>
             <div className="t-header">
+
                 <div style={cellSizes.at(0).gtc} className="row">
                     {Object.keys(data[0]).map((dataKeys,i)=>(
                         <div className="td th">{dataKeys.charAt(0).toUpperCase()+dataKeys.substring(1).replace("_"," ")}</div>

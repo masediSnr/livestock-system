@@ -1,8 +1,17 @@
 import React from 'react'
+import Table from '../components/Table'
 
 function StockMovement() {
     return (
-        <h2>Stock Movement</h2>
+        <div className="stock-container">
+            <h2>Stock Movement</h2>
+            <div className="notification-panel">
+
+            </div>
+            <div className="table-holder">
+                <Table />
+            </div>
+        </div>
     )
 }
 
