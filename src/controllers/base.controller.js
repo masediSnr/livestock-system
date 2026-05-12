@@ -1,12 +1,19 @@
+
 exports.create = (service) => async (req, res)=>{
+    console.log(req.body);
+    
     try {
-        const result = await service.create(req.body)
+
+        
+        const payload = {...req.body, file:req.file}
+
+        const result = await service.create(payload)
         res.status(201).json(
             {success: true,...result}
         )
         console.log("Successfuly Added!")
     } catch (error) {
-        res.status(400).json({error: error})
+        return res.json({error: req.body})
     }
 }
 exports.getAll = (service) => async (req,res)=>{
@@ -19,6 +26,18 @@ exports.getById = (service) => async (req,res) => {
     res.json(data)
 }
 
+exports.search = (service) => async (req,res) => {
+    const data = await service.search(req.body.searchTerm)
+    if(!data) return res.status(404).json({message: "not found!"});
+    res.json(data)
+}
+exports.overview = (service) => async (req,res)=>{
+    const data = await service.overview(req.params.id)
+    
+    if(!data) return res.status(404).json({message: "not found!"});
+    res.json(data.toJSON())
+
+}
 exports.getColumns = (service) => async (req,res) => {
     try {
         const columns = await service.getColumns()

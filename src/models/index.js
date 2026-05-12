@@ -48,4 +48,5 @@ db.Sale.belongsTo(db.Client);
 db.Staff.hasMany(db.Task, { foreignKey: 'StaffId' });
 db.Task.belongsTo(db.Staff);
 
+
 module.exports = db;

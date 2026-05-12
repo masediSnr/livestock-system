@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true },
     name : { type: DataTypes.STRING, allowNull: false },
     email : { type: DataTypes.STRING, allowNull: false },
-    role: {type: DataTypes.ENUM("admin","manager","worker"),
+    role: {type: DataTypes.ENUM("admin","manager","worker", "vet"),
        defaultValue: "worker"},
     CompanyId: DataTypes.UUID,
     contact: DataTypes.STRING,

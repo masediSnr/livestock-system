@@ -3,9 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true },
     task_type : { type: DataTypes.STRING, allowNull: false },
     assigned_to: DataTypes.STRING,
+    assigned_by: DataTypes.JSONB,
     due_date: DataTypes.STRING,
     linked_animal: DataTypes.STRING,
-    status: DataTypes.STRING,
+    to_do: DataTypes.STRING,
     StaffId: DataTypes.UUID,
     completion_notes: DataTypes.STRING
   }, { tableName: 'tasks' });

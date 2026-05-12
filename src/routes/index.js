@@ -10,10 +10,16 @@ const authRoute = require("./authRoute")
 router.use("/animals", baseRoutes(controller,{
     create: baseService.create(db.Animal),
     getAll: baseService.getAll(db.Animal),
+    overview: baseService.overview(db.Animal),
+    search: baseService.search(db.Animal),
     getById: baseService.getById(db.Animal),
     update: baseService.update(db.Animal),
     getColumns: baseService.getColumns(db.Animal),
     delete: baseService.delete(db.Animal),
+}))
+
+router.use("/report", baseRoutes(controller,{
+    overview: baseService.overview(db.Animal),
 }))
 
 router.use("/feed-log", baseRoutes(controller,{
@@ -29,6 +35,7 @@ router.use("/company", baseRoutes(controller,{
     getAll: baseService.getAll(db.Company),
     getById: baseService.getById(db.Company),
     update: baseService.update(db.Company),
+    overview: baseService.overview(db.Company),
     getColumns: baseService.getColumns(db.Company),
     delete: baseService.delete(db.Company),
 }))
@@ -92,6 +99,7 @@ router.use("/staff", baseRoutes(controller,{
     create: baseService.create(db.Staff),
     getAll: baseService.getAll(db.Staff),
     getById: baseService.getById(db.Staff),
+    overview: baseService.overview(db.Staff),
     update: baseService.update(db.Staff),
     getColumns: baseService.getColumns(db.Staff),
     delete: baseService.delete(db.Staff),

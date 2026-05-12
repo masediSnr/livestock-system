@@ -9,8 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     body_condition_score: DataTypes.STRING,
     treatment_notes: DataTypes.TEXT,
     outcome: DataTypes.TEXT,
+    file: DataTypes.BLOB,
+    mime_type: DataTypes.TEXT,
     date: DataTypes.DATE,
-    AnimalId: DataTypes.UUID
+    Animal_ID: DataTypes.TEXT
   }, { tableName: 'health_events' });
 };
 
